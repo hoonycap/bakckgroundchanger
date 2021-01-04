@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="kr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style>
+        div{
+            text-align: center;
+            vertical-align: middle;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+        }
+        span{
+            font-size:60px;
+            text-shadow: 0 0 5px white;
+        }
+        input{
+            width: 140px;
+            height: 54px;
+            font-size: 20px;
+            color: white;
+            background-color: lightgray;
+            border-radius: 8px;
+            border: 0;
+            outline: none;
+            box-shadow: 0 6px 4px darkgray;
+        }
+        input:hover{
+            background-color: gray;
+        }
+        input:active {
+            background-color: gray;
+            box-shadow: 0 6px 4px #666;
+            transform: translateY(4px);
+        }
+    </style>
+
+     <script>
+       let color = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+
+       let hex = '#';
+
+       function backgroundChanger(){
+
+         hex = '#';
+
+         var i = 0
+         while(i< 6 ){
+            var random = Math.floor(Math.random() * color.length);
+            hex = hex + color[random];
+
+            i = i + 1;
+         }
+
+
+            document.querySelector('body').style.backgroundColor = hex;
+
+       }
+
+
+       function hexwirte(hexNo){
+         document.getElementById("mymy").textContent= hexNo;
+
+
+       }
+
+
+     </script>
+
+
+
+
+
+
+  </head>
+  <body>
+    <div>
+    <span id = mymy>  #000000 </span>
+    <input type="button" name="" value="Click me" onclick="
+    backgroundChanger();
+    hexwirte(hex);
+    ">
+    </div>
+
+
+  </body>
+</html>
